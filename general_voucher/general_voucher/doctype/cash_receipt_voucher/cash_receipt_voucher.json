@@ -72,8 +72,13 @@
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2023-07-13 18:44:30.377957",
+ "links": [
+  {
+   "link_doctype": "Journal Entry",
+   "link_fieldname": "bill_no"
+  }
+ ],
+ "modified": "2023-07-14 11:14:39.364890",
  "modified_by": "Administrator",
  "module": "General Voucher",
  "name": "Cash Receipt Voucher",

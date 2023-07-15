@@ -43,7 +43,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Cash Receipt Voucher",
+   "options": "Bank Payment Voucher",
    "print_hide": 1,
    "read_only": 1
   },
@@ -58,7 +58,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Cash Receipt Voucher",
+   "options": "Bank Payment Voucher",
    "print_hide": 1,
    "read_only": 1
   },
@@ -80,8 +80,13 @@
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2023-07-13 19:08:44.461868",
+ "links": [
+  {
+   "link_doctype": "Journal Entry",
+   "link_fieldname": "bill_no"
+  }
+ ],
+ "modified": "2023-07-14 18:04:04.173725",
  "modified_by": "Administrator",
  "module": "General Voucher",
  "name": "Bank Payment Voucher",
