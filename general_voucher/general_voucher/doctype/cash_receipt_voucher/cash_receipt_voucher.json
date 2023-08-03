@@ -57,7 +57,6 @@
    "default": "0",
    "fieldname": "crv_status",
    "fieldtype": "Select",
-   "hidden": 1,
    "label": "CRV Status",
    "options": "0\n1\n2",
    "read_only": 1
@@ -78,7 +77,7 @@
    "link_fieldname": "bill_no"
   }
  ],
- "modified": "2023-07-14 11:14:39.364890",
+ "modified": "2023-07-27 14:59:46.751050",
  "modified_by": "Administrator",
  "module": "General Voucher",
  "name": "Cash Receipt Voucher",

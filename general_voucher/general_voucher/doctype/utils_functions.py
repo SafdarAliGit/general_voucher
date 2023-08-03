@@ -6,7 +6,7 @@ def get_doctype_by_field(doctype_name, field_name, field_value):
 
     if query:
         docname = query[0].name
-        doc = frappe.get_doc("Journal Entry", docname)
+        doc = frappe.get_doc(doctype_name, docname)
         return doc
     else:
         return None
