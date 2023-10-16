@@ -65,13 +65,13 @@ def get_columns():
             "label": _("Against"),
             "fieldname": "against",
             "fieldtype": "Data",
-            "width": 200
+            "width": 120
         },
         {
             "label": _("Item"),
             "fieldname": "items",
             "fieldtype": "Data",
-            "width": 200
+            "width": 250
         }
 
     ]
@@ -178,7 +178,7 @@ def get_data(filters):
                                             `tabGL Entry`.voucher_no,
                                             `tabGL Entry`.debit,
                                             `tabGL Entry`.credit,
-                                            `tabGL Entry`.against as against
+                                            `tabGL Entry`.against 
                                         FROM
                                             `tabGL Entry`
                                         WHERE
@@ -194,7 +194,7 @@ def get_data(filters):
                                     `tabGL Entry`.voucher_no,
                                     `tabGL Entry`.debit,
                                     `tabGL Entry`.credit,
-                                    `tabGL Entry`.against as against
+                                    `tabGL Entry`.against
                                 FROM
                                     `tabGL Entry`
                                 WHERE
