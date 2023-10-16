@@ -15,7 +15,7 @@ frappe.ui.form.on('Bank Payment Voucher', {
             return {
                 filters: [
                     ["Account", "account_type", "in", ["Bank"]],
-                     ["is_group", "not in", [1]]
+                     ["is_group", "=", 0]
                 ]
             };
         });

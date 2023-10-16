@@ -15,7 +15,7 @@ frappe.ui.form.on('Cash Receipt Voucher', {
             return {
                 filters: [
                     ["Account", "account_type", "in", ["Cash"]],
-                    ["is_group", "not in", [1]]
+                    ["is_group", "=", 0]
                 ]
             };
         });
