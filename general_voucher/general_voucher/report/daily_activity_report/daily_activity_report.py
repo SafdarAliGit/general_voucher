@@ -86,8 +86,6 @@ def get_conditions(filters, doctype):
     if filters.get("to_date"):
         conditions.append(f"`tab{doctype}`.posting_date <= %(to_date)s")
 
-    conditions.append(f"`tab{doctype}`.docstatus = 1")  # Include only submitted documents
-
     if doctype == "Journal Entry":
         conditions.append("`tabJournal Entry`.is_opening = 0")
 
@@ -131,7 +129,7 @@ def get_data(filters):
             LEFT JOIN
                 `tabSales Invoice Item` ON `tabSales Invoice`.name = `tabSales Invoice Item`.parent
             WHERE
-                {conditions}
+                {conditions} AND `tabSales Invoice`.docstatus = 1
             GROUP BY
                 `tabSales Invoice`.name, `tabSales Invoice`.customer, `tabSales Invoice`.grand_total
             ORDER BY
@@ -163,7 +161,7 @@ def get_data(filters):
                 LEFT JOIN
                     `tabPurchase Invoice Item` ON `tabPurchase Invoice`.name = `tabPurchase Invoice Item`.parent
                 WHERE
-                    {conditions}
+                    {conditions} AND `tabPurchase Invoice`.docstatus = 1
                 GROUP BY
                     `tabPurchase Invoice`.name, `tabPurchase Invoice`.supplier, `tabPurchase Invoice`.grand_total
                 ORDER BY
@@ -182,7 +180,7 @@ def get_data(filters):
                                         FROM
                                             `tabGL Entry`
                                         WHERE
-                                            {conditions}
+                                            {conditions} AND `tabGL Entry`.docstatus = 1
                                             AND `tabGL Entry`.debit >0
                                             AND (SELECT `account_type` FROM `tabAccount` WHERE `name` = `tabGL Entry`.account) ='Cash'
                                     """.format(conditions=get_conditions(filters, "GL Entry"))
@@ -198,7 +196,7 @@ def get_data(filters):
                                 FROM
                                     `tabGL Entry`
                                 WHERE
-                                    {conditions}
+                                    {conditions} AND `tabGL Entry`.docstatus = 1
                                     AND `tabGL Entry`.credit >0
                                     AND (SELECT `account_type` FROM `tabAccount` WHERE `name` = `tabGL Entry`.account) ='Cash'
                             """.format(conditions=get_conditions(filters, "GL Entry"))
@@ -214,7 +212,7 @@ def get_data(filters):
                     FROM
                         `tabGL Entry`
                     WHERE
-                        {conditions}
+                        {conditions} AND `tabGL Entry`.docstatus = 1
                         AND `tabGL Entry`.debit >0
                         AND (SELECT `account_type` FROM `tabAccount` WHERE `name` = `tabGL Entry`.account) ='Bank'
                 """.format(conditions=get_conditions(filters, "GL Entry"))
@@ -230,7 +228,7 @@ def get_data(filters):
                         FROM
                             `tabGL Entry`
                         WHERE
-                            {conditions}
+                            {conditions} AND `tabGL Entry`.docstatus = 1
                             AND `tabGL Entry`.credit >0
                             AND (SELECT `account_type` FROM `tabAccount` WHERE `name` = `tabGL Entry`.account) ='Bank'
                     """.format(conditions=get_conditions(filters, "GL Entry"))
