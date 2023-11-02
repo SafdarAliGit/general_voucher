@@ -180,7 +180,7 @@ def get_data(filters):
                                         FROM
                                             `tabGL Entry`
                                         WHERE
-                                            {conditions} AND `tabGL Entry`.docstatus = 1
+                                            {conditions} AND `tabGL Entry`.is_cancelled = 0
                                             AND `tabGL Entry`.debit >0
                                             AND (SELECT `account_type` FROM `tabAccount` WHERE `name` = `tabGL Entry`.account) ='Cash'
                                     """.format(conditions=get_conditions(filters, "GL Entry"))
@@ -196,7 +196,7 @@ def get_data(filters):
                                 FROM
                                     `tabGL Entry`
                                 WHERE
-                                    {conditions} AND `tabGL Entry`.docstatus = 1
+                                    {conditions} AND `tabGL Entry`.is_cancelled = 0
                                     AND `tabGL Entry`.credit >0
                                     AND (SELECT `account_type` FROM `tabAccount` WHERE `name` = `tabGL Entry`.account) ='Cash'
                             """.format(conditions=get_conditions(filters, "GL Entry"))
@@ -212,7 +212,7 @@ def get_data(filters):
                     FROM
                         `tabGL Entry`
                     WHERE
-                        {conditions} AND `tabGL Entry`.docstatus = 1
+                        {conditions} AND `tabGL Entry`.is_cancelled = 0
                         AND `tabGL Entry`.debit >0
                         AND (SELECT `account_type` FROM `tabAccount` WHERE `name` = `tabGL Entry`.account) ='Bank'
                 """.format(conditions=get_conditions(filters, "GL Entry"))
@@ -228,7 +228,7 @@ def get_data(filters):
                         FROM
                             `tabGL Entry`
                         WHERE
-                            {conditions} AND `tabGL Entry`.docstatus = 1
+                            {conditions} AND `tabGL Entry`.is_cancelled = 0
                             AND `tabGL Entry`.credit >0
                             AND (SELECT `account_type` FROM `tabAccount` WHERE `name` = `tabGL Entry`.account) ='Bank'
                     """.format(conditions=get_conditions(filters, "GL Entry"))
