@@ -9,7 +9,7 @@
  "filters": [],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2023-07-22 16:12:24.076442",
+ "modified": "2023-10-26 15:39:43.379181",
  "modified_by": "Administrator",
  "module": "General Voucher",
  "name": "Daily Activity Report",
@@ -27,6 +27,21 @@
   },
   {
    "role": "Auditor"
+  },
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "Sales Manager"
+  },
+  {
+   "role": "Maintenance User"
+  },
+  {
+   "role": "Stock User"
+  },
+  {
+   "role": "System Manager"
   }
  ]
 }

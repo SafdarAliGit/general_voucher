@@ -3,7 +3,6 @@
  "allow_rename": 1,
  "autoname": "format:BRV-{YY}-{#####}",
  "creation": "2023-07-13 12:20:08.319150",
- "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -20,6 +19,7 @@
   {
    "fieldname": "account",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "in_list_view": 1,
    "label": "Account",
    "options": "Account",
@@ -86,7 +86,7 @@
    "link_fieldname": "bill_no"
   }
  ],
- "modified": "2023-07-14 18:03:27.726749",
+ "modified": "2023-10-26 15:47:30.044881",
  "modified_by": "Administrator",
  "module": "General Voucher",
  "name": "Bank Receipt Voucher",
@@ -102,6 +102,33 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "select": 1,
    "share": 1,
    "write": 1
   }

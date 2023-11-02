@@ -17,6 +17,7 @@
   {
    "fieldname": "account",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "in_list_view": 1,
    "label": "Account",
    "options": "Account",
@@ -25,6 +26,7 @@
   {
    "fieldname": "party_type",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "in_list_view": 1,
    "label": "Party Type",
    "options": "DocType",
@@ -60,7 +62,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-07-13 18:47:07.608562",
+ "modified": "2023-10-26 06:48:38.482483",
  "modified_by": "Administrator",
  "module": "General Voucher",
  "name": "Cash Receipt Voucher Items",

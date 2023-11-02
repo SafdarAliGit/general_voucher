@@ -2,7 +2,6 @@
  "actions": [],
  "allow_rename": 1,
  "creation": "2023-07-13 12:13:42.919252",
- "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -18,6 +17,7 @@
   {
    "fieldname": "account",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "in_list_view": 1,
    "label": "Account",
    "options": "Account",
@@ -26,6 +26,7 @@
   {
    "fieldname": "party_type",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "in_list_view": 1,
    "label": "Party Type",
    "options": "DocType",
@@ -61,7 +62,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-07-13 18:46:53.413851",
+ "modified": "2023-10-26 15:58:48.648504",
  "modified_by": "Administrator",
  "module": "General Voucher",
  "name": "Cash Payment Voucher Items",

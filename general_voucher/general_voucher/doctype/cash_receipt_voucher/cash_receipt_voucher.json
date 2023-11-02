@@ -19,6 +19,7 @@
   {
    "fieldname": "account",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "in_list_view": 1,
    "label": "Account",
    "options": "Account",
@@ -76,7 +77,7 @@
    "link_fieldname": "bill_no"
   }
  ],
- "modified": "2023-10-16 18:06:14.498623",
+ "modified": "2023-10-26 15:46:41.059149",
  "modified_by": "Administrator",
  "module": "General Voucher",
  "name": "Cash Receipt Voucher",
@@ -92,6 +93,33 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "select": 1,
    "share": 1,
    "write": 1
   }
