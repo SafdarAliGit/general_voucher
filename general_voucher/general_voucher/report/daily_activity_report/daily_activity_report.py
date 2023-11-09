@@ -260,7 +260,7 @@ def get_data(filters):
          'items': ''}]
     sale_total_dict = {'voucher_type': '<b>Sum</b>', 'posting_date': '-------', 'voucher_no': '-------',
                        'party': '-------', 'debit': None, 'credit': None, 'grand_total': None,
-                       'items': '--------------'}
+                       'remarks': '--------------','items': '--------------'}
     total = 0
     total_taxes_and_charges = 0
     grand_total = 0
@@ -281,7 +281,7 @@ def get_data(filters):
                              'items': ''}]
     purchase_total_dict = {'voucher_type': '<b>Sum</b>', 'posting_date': '-------', 'voucher_no': '-------',
                            'party': '-------', 'debit': None, 'credit': None, 'grand_total': None,
-                           'items': '--------------'}
+                           'remarks': '--------------','items': '--------------'}
     total = 0
     total_taxes_and_charges = 0
     grand_total = 0
@@ -302,7 +302,7 @@ def get_data(filters):
                                   'items': ''}]
     cash_receipt_total_dict = {'voucher_type': '<b>Sum</b>', 'posting_date': '-------', 'voucher_no': '-------',
                                 'party': '-------', 'debit': None, 'credit': 0, 'grand_total': 0,
-                                'items': '--------------'}
+                                'remarks': '--------------','items': '--------------'}
     total = 0
     for index, cr in enumerate(cash_receipt_result):
         total += cr.debit
@@ -320,7 +320,7 @@ def get_data(filters):
                               'items': ''}]
     cash_payment_total_dict = {'voucher_type': '<b>Sum</b>', 'posting_date': '-------', 'voucher_no': '-------',
                             'party': '-------', 'debit': None, 'credit': 0, 'grand_total': 0,
-                            'items': '--------------'}
+                            'remarks': '--------------','items': '--------------'}
     total = 0
     for index, cr in enumerate(cash_payment_result):
         total += cr.credit
@@ -337,7 +337,7 @@ def get_data(filters):
                                   'items': ''}]
     bank_receipt_total_dict = {'voucher_type': '<b>Sum</b>', 'posting_date': '-------', 'voucher_no': '-------',
                                 'party': '-------', 'debit': None, 'credit': 0, 'grand_total': 0,
-                                'items': '--------------'}
+                                'remarks': '--------------','items': '--------------'}
     total = 0
     for index, cr in enumerate(bank_receipt_result):
         total += cr.debit
@@ -355,7 +355,7 @@ def get_data(filters):
                               'items': ''}]
     bank_payment_total_dict = {'voucher_type': '<b>Sum</b>', 'posting_date': '-------', 'voucher_no': '-------',
                             'party': '-------', 'debit': None, 'credit': 0, 'grand_total': 0,
-                            'items': '--------------'}
+                            'remarks': '--------------','items': '--------------'}
     total = 0
     for index, cr in enumerate(bank_payment_result):
         total += cr.credit
