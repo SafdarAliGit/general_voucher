@@ -67,6 +67,12 @@ def get_columns():
             "fieldtype": "Data",
             "width": 120
         },
+    {
+        "label": _("Remarks"),
+        "fieldname": "remarks",
+        "fieldtype": "Data",
+        "width": 150
+    },
         {
             "label": _("Item"),
             "fieldname": "items",
@@ -176,7 +182,8 @@ def get_data(filters):
                                             `tabGL Entry`.voucher_no,
                                             `tabGL Entry`.debit,
                                             `tabGL Entry`.credit,
-                                            `tabGL Entry`.against 
+                                            `tabGL Entry`.against,
+                                            `tabGL Entry`.remarks
                                         FROM
                                             `tabGL Entry`
                                         WHERE
@@ -192,7 +199,8 @@ def get_data(filters):
                                     `tabGL Entry`.voucher_no,
                                     `tabGL Entry`.debit,
                                     `tabGL Entry`.credit,
-                                    `tabGL Entry`.against
+                                    `tabGL Entry`.against,
+                                    `tabGL Entry`.remarks
                                 FROM
                                     `tabGL Entry`
                                 WHERE
@@ -208,7 +216,8 @@ def get_data(filters):
                         `tabGL Entry`.voucher_no,
                         `tabGL Entry`.debit,
                         `tabGL Entry`.credit,
-                        `tabGL Entry`.against
+                        `tabGL Entry`.against,
+                        `tabGL Entry`.remarks
                     FROM
                         `tabGL Entry`
                     WHERE
@@ -224,7 +233,8 @@ def get_data(filters):
                             `tabGL Entry`.voucher_no,
                             `tabGL Entry`.debit,
                             `tabGL Entry`.credit,
-                            `tabGL Entry`.against
+                            `tabGL Entry`.against,
+                            `tabGL Entry`.remarks
                         FROM
                             `tabGL Entry`
                         WHERE
