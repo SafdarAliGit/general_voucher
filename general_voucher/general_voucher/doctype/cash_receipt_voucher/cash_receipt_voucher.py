@@ -28,14 +28,14 @@ class CashReceiptVoucher(Document):
             je.append("accounts", {
                 'account': cash_account,
                 'debit_in_account_currency': total,
-                'credit_in_account_currency': 0,
+                'credit_in_account_currency': 0
             })
             for item in self.items:
                 je.append("accounts", {
                     'account': item.account,
                     'party_type': item.party_type,
                     'party': item.party,
-                    'user_remark': item.ref_no,
+                    'user_remark': f"{item.description}, Ref:{item.ref_no}",
                     'debit_in_account_currency': 0,
                     'credit_in_account_currency': item.amount
 
