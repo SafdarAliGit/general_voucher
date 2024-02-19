@@ -27,16 +27,17 @@ class CashPaymentVoucher(Document):
                     'account': item.account,
                     'party_type': item.party_type,
                     'party': item.party,
-                    'user_remark': item.ref_no,
+                    'user_remark': item.description,
                     'debit_in_account_currency': item.amount,
                     'credit_in_account_currency': 0
 
                 })
-            je.append("accounts", {
-                'account': cash_account,
-                'debit_in_account_currency': 0,
-                'credit_in_account_currency': total,
-            })
+                je.append("accounts", {
+                    'account': cash_account,
+                    'debit_in_account_currency': 0,
+                    'user_remark': f"{item.description if item.description else ''},{item.party if item.party else ''}",
+                    'credit_in_account_currency': item.amount,
+                })
             je.submit()
             frappe.db.set_value('Cash Payment Voucher', self.name, 'cpv_status', 1)
         else:

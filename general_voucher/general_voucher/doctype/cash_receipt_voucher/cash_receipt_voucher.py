@@ -25,12 +25,14 @@ class CashReceiptVoucher(Document):
             je.company = company
             je.bill_no = crv_no
             je.name = self.name
-            je.append("accounts", {
-                'account': cash_account,
-                'debit_in_account_currency': total,
-                'credit_in_account_currency': 0
-            })
+
             for item in self.items:
+                je.append("accounts", {
+                    'account': cash_account,
+                    'user_remark': f"{item.description if item.description else ''}, Ref:{item.ref_no}, {item.party if item.party else ''}",
+                    'debit_in_account_currency': item.amount,
+                    'credit_in_account_currency': 0
+                })
                 je.append("accounts", {
                     'account': item.account,
                     'party_type': item.party_type,

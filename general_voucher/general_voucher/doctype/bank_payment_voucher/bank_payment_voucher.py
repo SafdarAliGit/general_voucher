@@ -31,16 +31,17 @@ class BankPaymentVoucher(Document):
                     'account': item.account,
                     'party_type': item.party_type,
                     'party': item.party,
-                    'user_remark': item.ref_no,
+                    'user_remark': f"{item.description}, Ref:{item.ref_no}",
                     'debit_in_account_currency': item.amount,
                     'credit_in_account_currency': 0
 
                 })
-            je.append("accounts", {
-                'account': bank_account,
-                'debit_in_account_currency': 0,
-                'credit_in_account_currency': total,
-            })
+                je.append("accounts", {
+                    'account': bank_account,
+                    'debit_in_account_currency': 0,
+                    'user_remark': f"{item.description}, Ref:{item.ref_no}",
+                    'credit_in_account_currency': item.amount,
+                })
             je.submit()
             frappe.db.set_value('Bank Payment Voucher', self.name, 'bpv_status', 1)
         else:
