@@ -9,8 +9,7 @@
  "filters": [],
  "idx": 0,
  "is_standard": "Yes",
- "letter_head": "ZZ Packages",
- "modified": "2023-10-26 16:19:14.738336",
+ "modified": "2024-05-24 08:16:57.060228",
  "modified_by": "Administrator",
  "module": "General Voucher",
  "name": "Daily Activity",
@@ -25,6 +24,27 @@
   },
   {
    "role": "Accounts User"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Auditor"
+  },
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "Sales Manager"
+  },
+  {
+   "role": "Maintenance User"
+  },
+  {
+   "role": "Stock User"
   }
  ]
 }

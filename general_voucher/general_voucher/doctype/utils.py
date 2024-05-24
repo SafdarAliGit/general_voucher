@@ -44,6 +44,14 @@ def get_account_balance(**args):
         ac_balance['balance'] = 0
         return ac_balance
 
+@frappe.whitelist()
+def get_account_type(account_name):
+    account = frappe.get_doc("Account", account_name)
+    if account.is_group == 0:
+        return account.account_type
+    else:
+        return None
+
 
 # @frappe.whitelist()
 # def add_crv(**args):
