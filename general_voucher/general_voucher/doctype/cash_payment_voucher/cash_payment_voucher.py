@@ -43,7 +43,7 @@ class CashPaymentVoucher(Document):
         else:
             if len(self.items) < 1:
                 frappe.throw("No detailed rows found")
-            if self.crv_status > 0:
+            if self.cpv_status > 0:
                 frappe.throw("Journal entry already created")
 
     def on_cancel(self):
