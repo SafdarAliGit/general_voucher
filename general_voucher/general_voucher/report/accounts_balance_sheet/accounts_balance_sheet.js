@@ -1,7 +1,7 @@
 // Copyright (c) 2018, Frappe Technologies Pvt. Ltd. and Contributors
 // License: GNU General Public License v3. See license.txt
 
-frappe.query_reports["Bank Accounts Balance Sheet"] = {
+frappe.query_reports["Accounts Balance Sheet"] = {
 	"filters": [
 		{
 			"fieldname":"company",

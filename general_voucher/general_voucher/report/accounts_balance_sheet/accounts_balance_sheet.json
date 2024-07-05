@@ -12,11 +12,11 @@
  "modified": "2024-02-21 11:19:47.074922",
  "modified_by": "Administrator",
  "module": "General Voucher",
- "name": "Bank Accounts Balance Sheet",
+ "name": "Accounts Balance Sheet",
  "owner": "Administrator",
  "prepared_report": 0,
  "ref_doctype": "GL Entry",
- "report_name": "Bank Accounts Balance Sheet",
+ "report_name": "Accounts Balance Sheet",
  "report_type": "Script Report",
  "roles": [
   {
