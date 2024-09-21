@@ -57,4 +57,4 @@ class CashPaymentVoucher(Document):
             new_name = int(current_je.name.split("-")[-1]) + 1
         else:
             new_name = f"{current_je.name}-{1}"
-        make_autoname(new_name, 'Jouranl Entry')
+        make_autoname(new_name, 'Journal Entry')
