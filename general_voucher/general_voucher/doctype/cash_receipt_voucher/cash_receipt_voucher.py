@@ -52,13 +52,14 @@ class CashReceiptVoucher(Document):
 
     def on_cancel(self):
         current_je = get_doctype_by_field('Journal Entry', 'bill_no', self.name)
-        if current_je.docstatus != 2:  # Ensure the document is in the "Submitted" state
-            current_je.cancel()
-            frappe.db.commit()
-        else:
-            frappe.throw("Document is not in the 'Submitted' state.")
-        if current_je.amended_from:
-            new_name = int(current_je.name.split("-")[-1]) + 1
-        else:
-            new_name = f"{current_je.name}-{1}"
-        make_autoname(new_name,'Journal Entry')
+        if current_je:
+            if current_je.docstatus != 2:  # Ensure the document is in the "Submitted" state
+                current_je.cancel()
+                frappe.db.commit()
+            else:
+                frappe.throw("Document is not in the 'Submitted' state.")
+            if current_je.amended_from:
+                new_name = int(current_je.name.split("-")[-1]) + 1
+            else:
+                new_name = f"{current_je.name}-{1}"
+            make_autoname(new_name,'Journal Entry')
