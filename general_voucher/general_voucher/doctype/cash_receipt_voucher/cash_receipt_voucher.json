@@ -9,8 +9,11 @@
  "field_order": [
   "account",
   "balance",
+  "column_break_ww2bz",
   "posting_date",
   "amended_from",
+  "company",
+  "section_break_4dleb",
   "items",
   "crv_status",
   "total"
@@ -57,6 +60,7 @@
    "default": "0",
    "fieldname": "crv_status",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "CRV Status",
    "options": "0\n1\n2",
    "read_only": 1
@@ -67,6 +71,22 @@
    "fieldtype": "Currency",
    "label": "Total",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ww2bz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "remember_last_selected_value": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_4dleb",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -77,7 +97,7 @@
    "link_fieldname": "bill_no"
   }
  ],
- "modified": "2023-10-26 15:46:41.059149",
+ "modified": "2024-10-08 17:46:57.438799",
  "modified_by": "Administrator",
  "module": "General Voucher",
  "name": "Cash Receipt Voucher",

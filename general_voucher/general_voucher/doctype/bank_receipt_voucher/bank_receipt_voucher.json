@@ -9,8 +9,11 @@
  "field_order": [
   "account",
   "balance",
+  "column_break_o1d5u",
   "posting_date",
   "amended_from",
+  "company",
+  "section_break_frkuc",
   "items",
   "total",
   "brv_status"
@@ -76,6 +79,22 @@
    "hidden": 1,
    "label": "BRV Status",
    "options": "0\n1\n2"
+  },
+  {
+   "fieldname": "column_break_o1d5u",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "remember_last_selected_value": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_frkuc",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -86,7 +105,7 @@
    "link_fieldname": "bill_no"
   }
  ],
- "modified": "2023-10-26 15:47:30.044881",
+ "modified": "2024-10-08 17:38:46.477510",
  "modified_by": "Administrator",
  "module": "General Voucher",
  "name": "Bank Receipt Voucher",

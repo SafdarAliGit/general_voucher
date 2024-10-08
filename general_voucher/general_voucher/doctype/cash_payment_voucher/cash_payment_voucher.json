@@ -9,8 +9,11 @@
  "field_order": [
   "account",
   "balance",
+  "column_break_ynxxm",
   "posting_date",
   "amended_from",
+  "company",
+  "section_break_r8fjq",
   "items",
   "total",
   "cpv_status"
@@ -76,6 +79,22 @@
    "hidden": 1,
    "label": "CPV Status",
    "options": "0\n1\n2"
+  },
+  {
+   "fieldname": "column_break_ynxxm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_r8fjq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "remember_last_selected_value": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -86,7 +105,7 @@
    "link_fieldname": "bill_no"
   }
  ],
- "modified": "2023-10-26 06:49:38.343823",
+ "modified": "2024-10-08 17:41:38.975364",
  "modified_by": "Administrator",
  "module": "General Voucher",
  "name": "Cash Payment Voucher",
