@@ -11,9 +11,7 @@ class BankPaymentVoucher(Document):
     def before_submit(self):
         je_present = get_doctype_by_field('Journal Entry', 'bill_no', self.name)
         company = self.company
-        cost_center = frappe.get_cached_value(
-            "Company", company, ["cost_center"]
-        )
+        cost_center = frappe.get_cached_value("Company", company, "cost_center")
         bank_account = self.account
         posting_date = self.posting_date
         voucher_type = "Bank Entry"
