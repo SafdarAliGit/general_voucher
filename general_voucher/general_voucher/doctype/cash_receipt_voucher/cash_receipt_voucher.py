@@ -1,6 +1,7 @@
 # Copyright (c) 2023, Tech Ventures and contributors
 # For license information, please see license.txt
 import frappe
+from erpnext.regional.united_states.setup import setup_company_independent_fixtures
 from frappe.model import meta
 from frappe.model.docstatus import DocStatus
 # import frappe
@@ -12,7 +13,7 @@ from general_voucher.general_voucher.doctype.utils_functions import get_doctype_
 class CashReceiptVoucher(Document):
     def before_submit(self):
         je_present = get_doctype_by_field('Journal Entry', 'bill_no', self.name)
-        company = frappe.defaults.get_defaults().company
+        company = self.company
         cash_account = self.account
         posting_date = self.posting_date
         voucher_type = "Cash Entry"

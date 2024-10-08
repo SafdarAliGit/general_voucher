@@ -10,7 +10,7 @@ from general_voucher.general_voucher.doctype.utils_functions import get_doctype_
 class BankPaymentVoucher(Document):
     def before_submit(self):
         je_present = get_doctype_by_field('Journal Entry', 'bill_no', self.name)
-        company = frappe.defaults.get_defaults().company
+        company = self.company
         bank_account = self.account
         posting_date = self.posting_date
         voucher_type = "Bank Entry"
