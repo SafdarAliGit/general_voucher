@@ -15,7 +15,8 @@ frappe.ui.form.on('Bank Receipt Voucher', {
             return {
                 filters: [
                     ["Account", "account_type", "in", ["Bank"]],
-                    ["is_group", "=", 0]
+                    ["is_group", "=", 0],
+                    ["company", "=", frm.doc.company]
                 ]
             };
         });
@@ -26,6 +27,7 @@ frappe.ui.form.on('Bank Receipt Voucher', {
                 ]
             };
         });
+
     },
     account: function (frm) {
         frappe.call({

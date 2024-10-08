@@ -15,7 +15,8 @@ frappe.ui.form.on('Cash Receipt Voucher', {
             return {
                 filters: [
                     ["Account", "account_type", "in", ["Cash"]],
-                    ["is_group", "=", 0]
+                    ["is_group", "=", 0],
+                    ["company", "=", frm.doc.company]
                 ]
             };
         });
@@ -26,6 +27,7 @@ frappe.ui.form.on('Cash Receipt Voucher', {
                 ]
             };
         });
+
     },
 
     account: function (frm) {
