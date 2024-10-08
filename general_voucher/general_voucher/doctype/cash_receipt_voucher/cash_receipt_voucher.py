@@ -14,6 +14,9 @@ class CashReceiptVoucher(Document):
     def before_submit(self):
         je_present = get_doctype_by_field('Journal Entry', 'bill_no', self.name)
         company = self.company
+        cost_center = frappe.get_cached_value(
+            "Company", company, ["cost_center"]
+        )
         cash_account = self.account
         posting_date = self.posting_date
         voucher_type = "Cash Entry"
@@ -32,7 +35,8 @@ class CashReceiptVoucher(Document):
                     'account': cash_account,
                     'user_remark': f"{item.description if item.description else ''}, Ref:{item.ref_no}, {item.party if item.party else ''}",
                     'debit_in_account_currency': item.amount,
-                    'credit_in_account_currency': 0
+                    'credit_in_account_currency': 0,
+                    'cost_center': cost_center
                 })
                 je.append("accounts", {
                     'account': item.account,
@@ -40,7 +44,8 @@ class CashReceiptVoucher(Document):
                     'party': item.party,
                     'user_remark': f"{item.description}, Ref:{item.ref_no}",
                     'debit_in_account_currency': 0,
-                    'credit_in_account_currency': item.amount
+                    'credit_in_account_currency': item.amount,
+                    'cost_center': cost_center
 
                 })
             je.submit()
