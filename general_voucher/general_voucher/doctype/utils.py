@@ -33,7 +33,7 @@ def get_party_type(**args):
 @frappe.whitelist()
 def get_account_balance(**args):
     ac_balance = {}
-    company = frappe.defaults.get_defaults().company
+    company = args.get("company")
     cost_center = frappe.get_cached_value(
         "Company", company, ["cost_center"]
     )

@@ -19,6 +19,13 @@ frappe.ui.form.on('Cash Receipt Voucher', {
                 ]
             };
         });
+        frm.set_query('account', 'items', function (doc, cdt, cdn) {
+            return {
+                filters: [
+                    ["Account", "company", "=", frm.doc.company],
+                ]
+            };
+        });
     },
 
     account: function (frm) {
@@ -26,6 +33,7 @@ frappe.ui.form.on('Cash Receipt Voucher', {
             method: 'general_voucher.general_voucher.doctype.utils.get_account_balance',
             args: {
                 account: frm.doc.account,
+                company: frm.doc.company
             },
             callback: function (r) {
                 if (!r.exc) {

@@ -7,11 +7,11 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "company",
   "account",
-  "balance",
   "column_break_5zz15",
   "posting_date",
-  "company",
+  "balance",
   "amended_from",
   "section_break_wjjp1",
   "items",
@@ -105,7 +105,7 @@
    "link_fieldname": "bill_no"
   }
  ],
- "modified": "2024-10-08 17:36:37.217252",
+ "modified": "2024-10-08 18:17:11.138577",
  "modified_by": "Administrator",
  "module": "General Voucher",
  "name": "Bank Payment Voucher",

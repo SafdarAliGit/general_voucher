@@ -7,12 +7,12 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "company",
   "account",
-  "balance",
   "column_break_ynxxm",
   "posting_date",
   "amended_from",
-  "company",
+  "balance",
   "section_break_r8fjq",
   "items",
   "total",
@@ -105,7 +105,7 @@
    "link_fieldname": "bill_no"
   }
  ],
- "modified": "2024-10-08 17:41:38.975364",
+ "modified": "2024-10-08 18:18:10.317199",
  "modified_by": "Administrator",
  "module": "General Voucher",
  "name": "Cash Payment Voucher",

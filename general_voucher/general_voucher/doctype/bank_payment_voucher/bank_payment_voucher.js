@@ -1,7 +1,7 @@
 frappe.ui.form.on('Bank Payment Voucher', {
 
     refresh: function (frm) {
-         function calculate_net_total(frm) {
+        function calculate_net_total(frm) {
             var amount = 0;
             $.each(frm.doc.items || [], function (i, d) {
                 amount += flt(d.amount);
@@ -15,16 +15,26 @@ frappe.ui.form.on('Bank Payment Voucher', {
             return {
                 filters: [
                     ["Account", "account_type", "in", ["Bank"]],
-                     ["is_group", "=", 0]
+                    ["is_group", "=", 0]
                 ]
             };
         });
+
+        frm.set_query('account', 'items', function (doc, cdt, cdn) {
+            return {
+                filters: [
+                    ["Account", "company", "=", frm.doc.company],
+                ]
+            };
+        });
+
     },
     account: function (frm) {
         frappe.call({
             method: 'general_voucher.general_voucher.doctype.utils.get_account_balance',
             args: {
                 account: frm.doc.account,
+                company: frm.doc.company
             },
             callback: function (r) {
                 if (!r.exc) {
@@ -52,7 +62,7 @@ frappe.ui.form.on("Bank Payment Voucher Items", {
             }
         });
     },
-        amount: function (frm, cdt, cdn) {
+    amount: function (frm, cdt, cdn) {
         function calculate_net_total(frm) {
             var amount = 0;
             $.each(frm.doc.items || [], function (i, d) {

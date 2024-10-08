@@ -15,7 +15,14 @@ frappe.ui.form.on('Cash Payment Voucher', {
             return {
                 filters: [
                     ["Account", "account_type", "in", ["Cash"]],
-                     ["is_group", "=", 0]
+                    ["is_group", "=", 0]
+                ]
+            };
+        });
+        frm.set_query('account', 'items', function (doc, cdt, cdn) {
+            return {
+                filters: [
+                    ["Account", "company", "=", frm.doc.company],
                 ]
             };
         });
@@ -25,6 +32,7 @@ frappe.ui.form.on('Cash Payment Voucher', {
             method: 'general_voucher.general_voucher.doctype.utils.get_account_balance',
             args: {
                 account: frm.doc.account,
+                company: frm.doc.company
             },
             callback: function (r) {
                 if (!r.exc) {
