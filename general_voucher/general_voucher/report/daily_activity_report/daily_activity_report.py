@@ -254,11 +254,11 @@ def get_data(filters):
     # ==================CALCULATING TOTAL IN SALES====================
 
     sales_header_dict = [
-        {'voucher_type': '<b><u>Sales Invoice</u></b>', 'posting_date': '', 'voucher_no': '',
+        {'voucher_type': 'Sales Invoice', 'posting_date': '', 'voucher_no': '',
          'party': '', 'debit': '', 'credit': '',
          'grand_total': '',
          'items': ''}]
-    sale_total_dict = {'voucher_type': '<b>Sum</b>', 'posting_date': '-------', 'voucher_no': '-------',
+    sale_total_dict = {'voucher_type': ' Sum ', 'posting_date': '-------', 'voucher_no': '-------',
                        'party': '-------', 'debit': None, 'credit': None, 'grand_total': None,
                        'remarks': '--------------','items': '--------------'}
     total = 0
@@ -276,10 +276,10 @@ def get_data(filters):
     sale_result.append(sale_total_dict)  # appending a row at end of list of dicts
     # ====================CALCULATING TOTAL IN SALES END====================
      # ====================CALCULATING TOTAL IN PURCHASE====================
-    purchase_header_dict = [{'voucher_type': '<b><u>Purchase Invoice</b></u>', 'posting_date': '', 'voucher_no': '',
+    purchase_header_dict = [{'voucher_type': '  Purchase Invoice  ', 'posting_date': '', 'voucher_no': '',
                              'party': '', 'debit': '', 'credit': '', 'grand_total': '',
                              'items': ''}]
-    purchase_total_dict = {'voucher_type': '<b>Sum</b>', 'posting_date': '-------', 'voucher_no': '-------',
+    purchase_total_dict = {'voucher_type': ' Sum ', 'posting_date': '-------', 'voucher_no': '-------',
                            'party': '-------', 'debit': None, 'credit': None, 'grand_total': None,
                            'remarks': '--------------','items': '--------------'}
     total = 0
@@ -297,10 +297,10 @@ def get_data(filters):
     purchase_result.append(purchase_total_dict)  # appending a row at end of list of dicts
     # ====================CALCULATING TOTAL IN PURCHASE END====================
     # ====================CALCULATING TOTAL IN CASH RECEIVED====================
-    cash_receipt_header_dict = [{'voucher_type': '<b><u>Cash Receipt</b></u>', 'posting_date': '', 'voucher_no': '',
+    cash_receipt_header_dict = [{'voucher_type': '  Cash Receipt  ', 'posting_date': '', 'voucher_no': '',
                                   'party': '', 'debit': '', 'credit': '', 'grand_total': '',
                                   'items': ''}]
-    cash_receipt_total_dict = {'voucher_type': '<b>Sum</b>', 'posting_date': '-------', 'voucher_no': '-------',
+    cash_receipt_total_dict = {'voucher_type': ' Sum ', 'posting_date': '-------', 'voucher_no': '-------',
                                 'party': '-------', 'debit': None, 'credit': 0, 'grand_total': 0,
                                 'remarks': '--------------','items': '--------------'}
     total = 0
@@ -315,10 +315,10 @@ def get_data(filters):
     #====================CALCULATING TOTAL IN CASH RECEIVED END====================
 
     # ====================CALCULATING TOTAL IN CASH PAID====================
-    cash_payment_header_dict = [{'voucher_type': '<b><u>Cash Payment</b></u>', 'posting_date': '', 'voucher_no': '',
+    cash_payment_header_dict = [{'voucher_type': '  Cash Payment  ', 'posting_date': '', 'voucher_no': '',
                               'party': '', 'debit': '', 'credit': '', 'grand_total': '',
                               'items': ''}]
-    cash_payment_total_dict = {'voucher_type': '<b>Sum</b>', 'posting_date': '-------', 'voucher_no': '-------',
+    cash_payment_total_dict = {'voucher_type': ' Sum ', 'posting_date': '-------', 'voucher_no': '-------',
                             'party': '-------', 'debit': None, 'credit': 0, 'grand_total': 0,
                             'remarks': '--------------','items': '--------------'}
     total = 0
@@ -332,10 +332,10 @@ def get_data(filters):
     cash_payment_result.append(cash_payment_total_dict)
     # ====================CALCULATING TOTAL IN CASH PAID END====================
     # ====================CALCULATING TOTAL IN BANK RECEIVED====================
-    bank_receipt_header_dict = [{'voucher_type': '<b><u>Bank Received</b></u>', 'posting_date': '', 'voucher_no': '',
+    bank_receipt_header_dict = [{'voucher_type': '  Bank Received  ', 'posting_date': '', 'voucher_no': '',
                                   'party': '', 'debit': '', 'credit': '', 'grand_total': '',
                                   'items': ''}]
-    bank_receipt_total_dict = {'voucher_type': '<b>Sum</b>', 'posting_date': '-------', 'voucher_no': '-------',
+    bank_receipt_total_dict = {'voucher_type': ' Sum ', 'posting_date': '-------', 'voucher_no': '-------',
                                 'party': '-------', 'debit': None, 'credit': 0, 'grand_total': 0,
                                 'remarks': '--------------','items': '--------------'}
     total = 0
@@ -350,10 +350,10 @@ def get_data(filters):
     #====================CALCULATING TOTAL IN BANK RECEIVED END====================
 
     # ====================CALCULATING TOTAL IN BANK PAID====================
-    bank_payment_header_dict = [{'voucher_type': '<b><u>Bank Payment</b></u>', 'posting_date': '', 'voucher_no': '',
+    bank_payment_header_dict = [{'voucher_type': '  Bank Payment  ', 'posting_date': '', 'voucher_no': '',
                               'party': '', 'debit': '', 'credit': '', 'grand_total': '',
                               'items': ''}]
-    bank_payment_total_dict = {'voucher_type': '<b>Sum</b>', 'posting_date': '-------', 'voucher_no': '-------',
+    bank_payment_total_dict = {'voucher_type': ' Sum ', 'posting_date': '-------', 'voucher_no': '-------',
                             'party': '-------', 'debit': None, 'credit': 0, 'grand_total': 0,
                             'remarks': '--------------','items': '--------------'}
     total = 0

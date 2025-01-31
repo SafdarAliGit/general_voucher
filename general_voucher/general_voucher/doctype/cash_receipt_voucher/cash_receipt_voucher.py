@@ -12,7 +12,7 @@ from general_voucher.general_voucher.doctype.utils_functions import get_doctype_
 
 class CashReceiptVoucher(Document):
     def before_submit(self):
-        # je_present = get_doctype_by_field('Journal Entry', 'bill_no', self.name)
+        je_present = get_doctype_by_field('Journal Entry', 'bill_no', self.name)
         company = self.company
         cost_center = frappe.get_cached_value("Company", company, "cost_center")
         cash_account = self.account
@@ -20,8 +20,7 @@ class CashReceiptVoucher(Document):
         voucher_type = "Cash Entry"
         crv_no = self.name
         total = self.total
-        # if len(self.items) > 0 and int(self.crv_status) < 1 and not je_present:
-        if len(self.items) > 0:
+        if len(self.items) > 0 and int(self.crv_status) < 1 and not je_present:
             je = frappe.new_doc("Journal Entry")
             je.posting_date = posting_date
             je.voucher_type = voucher_type
