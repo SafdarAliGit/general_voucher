@@ -82,10 +82,9 @@ def get_data(filters):
         SUM(si.grand_total) AS grand_total
     FROM
         `tabSales Invoice` AS si
-    LEFT JOIN
-        `tabSales Invoice Item` AS sii ON si.name = sii.parent
     WHERE
         {conditions} AND si.docstatus = 1
+    
     ORDER BY
         si.posting_date ASC, si.name ASC
     """.format(conditions=get_conditions(filters, "si"))
@@ -97,8 +96,6 @@ def get_data(filters):
         SUM(pi.grand_total) AS grand_total
     FROM
         `tabPurchase Invoice` AS pi
-    LEFT JOIN
-        `tabPurchase Invoice Item` AS pii ON pi.name = pii.parent
     WHERE
         {conditions} AND pi.docstatus = 1
     ORDER BY
