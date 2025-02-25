@@ -43,6 +43,7 @@ frappe.ui.form.on('Cash Payment Voucher', {
             }
         });
     }
+    
 });
 
 
@@ -84,7 +85,9 @@ frappe.ui.form.on("Cash Payment Voucher Items", {
 
         calculate_net_total(frm)
         frm.refresh_field('items');
-    }
+    },
+    
+
 
 });
 
