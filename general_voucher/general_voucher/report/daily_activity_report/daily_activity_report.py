@@ -92,9 +92,6 @@ def get_conditions(filters, doctype):
     if filters.get("to_date"):
         conditions.append(f"`tab{doctype}`.posting_date <= %(to_date)s")
 
-    if doctype == "Journal Entry":
-        conditions.append("`tabJournal Entry`.is_opening = 0")
-
     return " AND ".join(conditions)
 
 
